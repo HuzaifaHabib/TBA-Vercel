@@ -9,22 +9,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-// export default function PorfilioSlider() {
-
-
-//     const items = [
-
-
-//     ];
-
-//     return (
-//         <div className='w-2/3 '>
-//             <AliceCarousel items={items} />
-//         </div>
-//     );
-// }
-
-
 function PorfilioSlider() {
 
     const settings = {
@@ -36,7 +20,7 @@ function PorfilioSlider() {
         slidesToScroll: 1,
         speed: 1000,
         autoplaySpeed: 5000,
-        arrows: true,
+        arrows: false,
         dots: false,
         autoplay: true,
         // nextArrow: <NextArrow />,
