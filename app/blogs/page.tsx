@@ -9,7 +9,7 @@ import { getAllPostsForHome, getAllSettings } from '../lib/api';
 
 async function Index() {
     const allPosts = (await getAllPostsForHome()) || [];
-    const settings = await getAllSettings();
+    const settings = (await getAllSettings()) || [];
     const postMeta = allPosts.meta || {};
 
     const heroPost = allPosts.posts[0];

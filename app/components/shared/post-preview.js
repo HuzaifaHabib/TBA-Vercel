@@ -3,7 +3,8 @@ import Link from "next/link"
 import Image from "next/image"
 
 export default function PostPreview({ post }) {
-  const { title, published_at, custom_excerpt, excerpt, slug, reading_time } = post
+  const { title, published_at, custom_excerpt, excerpt, slug, reading_time, meta_description } = post
+  console.log(post)
   return (
     <Link legacyBehavior href={`/posts/${slug}`}>
 
@@ -16,8 +17,12 @@ export default function PostPreview({ post }) {
           <span className="pl-2">{reading_time} minutes</span>
         </div>
         <div className="flex flex-row gap-2">
-          <p className="hidden md:block text-lg leading-relaxed mb-4">{custom_excerpt || excerpt}</p>
-          <Image alt={post.feature_image_alt || "img-post"} src={post.feature_image} width={200} height={200} />
+          {/* <p className="hidden md:block text-lg leading-relaxed mb-4">{custom_excerpt || excerpt}</p> */}
+          <p className="hidden md:block text-lg leading-relaxed mb-4">{meta_description}</p>
+          {post?.feature_image ?
+            <Image alt={post.feature_image_alt || "img-post"} src={post.feature_image} width={200} height={200} />
+            : null
+          }
         </div>
       </div>
     </Link>
