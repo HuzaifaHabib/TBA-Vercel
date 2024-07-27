@@ -137,10 +137,10 @@ export default function Home() {
           className={`fixed top-0 left-0 w-full h-full bg-[#1A112F] opacity-95 text-white transform ${menuOpen ? 'translate-x-0' : '-translate-x-full'
             } transition-transform duration-300 ease-in-out z-50`}
         >
-          <div className='flex flex-row gap-2 mt-2'>
+          <div className='flex flex-row gap-2 mt-2 items-center'>
             <button
               onClick={toggleMenu}
-              className="text-white p-4 focus:outline-none"
+              className="text-white p-4 focus:outline-none w-1/4"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +157,11 @@ export default function Home() {
                 />
               </svg>
             </button>
-            <Image src={mobileNavLogo} alt="Logo" className='w-1/2 ml-2' />
+            <div className='w-2/4'>
+
+              <Image width={180} height={180} src={mobileNavLogo} alt="Logo" />
+            </div>
+            <div className='w-1/4'></div>
           </div>
 
 
@@ -218,15 +222,15 @@ export default function Home() {
 
 
         <motion.div
-          className="text-center py-1 md:py-16 px-4"
+          className="text-center py-1 md:py-12 px-4"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
         >
-          <motion.h1 className="text-1xl md:text-4xl font-bold mb-2 md:mb-4" variants={textVariants}>
-            Integration & Automation <span className="text-purple-300">Expert</span>
+          <motion.h1 className="text-1xl md:text-[44px] font-bold mb-2 md:mb-4" variants={textVariants}>
+            Integration & Automation <span className="text-purple-500">Expert</span>
           </motion.h1>
-          <motion.p className="text-base  px-8 mb-5 md:mb-8" variants={textVariants}>
+          <motion.p className="md:text-xl text-base  px-8 mb-5 md:mb-8 text-gray-300" variants={textVariants}>
             Let's redefine efficiency with smart, automated systems that give <br /> you back the most valuable resource—time.
           </motion.p>
           <motion.button
@@ -238,54 +242,31 @@ export default function Home() {
         </motion.div>
 
 
-
-
-        {/* <div className="flex flex-col md:flex-row justify-center gap-0 md:gap-8 mt-0 md:mt-10 px-12 md:px-0">
-          <div className="flex items-center gap-4 mt-5 md:mt-0">
-            <svg className=" h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15 4.707 11.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l9-9a1 1 0 00-1.414-1.414z" clipRule="evenodd" />
-            </svg>
-            <span className="text-sm"><span className="font-bold"> TOP 10% </span> All Upwork</span>
-          </div>
-          <div className="flex items-center gap-4 mt-5 md:mt-0">
-            <svg className=" h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15 4.707 11.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l9-9a1 1 0 00-1.414-1.414z" clipRule="evenodd" />
-            </svg>
-            <span className="text-sm"><span className="font-bold">TOP 1%  </span> Script & Automation</span>
-          </div>
-          <div className="flex items-center gap-4 mt-5 md:mt-0">
-            <svg className=" h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15 4.707 11.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l9-9a1 1 0 00-1.414-1.414z" clipRule="evenodd" />
-            </svg>
-            <span className="text-sm"><span className="font-bold"> TOP 5%  </span>CRM Integration</span>
-          </div>
-        </div> */}
-
-
         <motion.div
-          className="flex flex-col md:flex-row justify-center gap-0 md:gap-8 mt-0 md:mt-10 px-12 md:px-0"
+          className="flex flex-col md:flex-row justify-center gap-0 md:gap-8 mt-0 md:mt-0 px-12 md:px-0"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
         >
-          <motion.div className="flex items-center gap-4 mt-5 md:mt-0" variants={itemVariants}>
+          <motion.div className="flex items-center gap-4 mt-5 md:mt-0 justify-center" variants={itemVariants}>
             <svg className="h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15 4.707 11.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l9-9a1 1 0 00-1.414-1.414z" clipRule="evenodd" />
             </svg>
-            <span className="text-sm"><span className="font-bold"> TOP 10% </span> All Upwork</span>
+            <span className="text-sm md:text-lg text-gray-300"><span className="font-bold text-white"> TOP 10% </span> All Upwork</span>
           </motion.div>
-          <motion.div className="flex items-center gap-4 mt-5 md:mt-0" variants={itemVariants}>
+          <motion.div className="flex items-center gap-4 mt-5 md:mt-0 justify-center" variants={itemVariants}>
             <svg className="h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15 4.707 11.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l9-9a1 1 0 00-1.414-1.414z" clipRule="evenodd" />
             </svg>
-            <span className="text-sm"><span className="font-bold">TOP 1%  </span> Script & Automation</span>
+            <span className="text-sm md:text-lg text-gray-300"><span className="font-bold text-white"> TOP 5%  </span>CRM Integration</span>
           </motion.div>
-          <motion.div className="flex items-center gap-4 mt-5 md:mt-0" variants={itemVariants}>
+          <motion.div className="flex items-center gap-4 mt-5 md:mt-0 justify-center" variants={itemVariants}>
             <svg className="h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15 4.707 11.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l9-9a1 1 0 00-1.414-1.414z" clipRule="evenodd" />
             </svg>
-            <span className="text-sm"><span className="font-bold"> TOP 5%  </span>CRM Integration</span>
+            <span className="text-sm md:text-lg text-gray-300"><span className="font-bold text-white">TOP 1%  </span> Script & Automation</span>
           </motion.div>
+
         </motion.div>
 
 
@@ -359,13 +340,14 @@ export default function Home() {
 
           {/* <div className="flex items-center justify-center"> */}
           <div className="w-full md:w-1/2 px-10 md:px-0 text-center">
-            <h1 className="text-[20px] md:text-4xl font-bold mb-4 text-toolsText">Specialized in Advanced <br />Automation Platforms</h1>
+            <h1 className="text-[20px] md:text-[44px] leading-tight font-bold mb-4 text-toolsText">Specialized in Advanced <br />Automation Platforms</h1>
           </div>
           {/* </div> */}
 
         </AnimatedFadeIn>
         {/* <AnimatedFadeInLeftToRight className=""> */}
-        <div className="flex flex-row md:justify-center md:mx-20 px-5 gap-2 md:gap-12 md:pt-20 py-5 overflow-x-scroll  md:w-[unset]" style={{ scrollbarWidth: "none" }}>
+        {/* flex flex-row md:justify-stretch md:mx-20 px-5 gap-2 md:gap-12 md:pt-20 py-5 overflow-x-scroll md:w-[unset] pb-20 */}
+        <div className="flex flex-row md:justify-center px-5 gap-2 md:gap-12 md:pt-10 py-5 overflow-x-scroll  md:w-[unset]" style={{ scrollbarWidth: "none" }}>
           <a href="http://www.example.com" target="_blank" rel="noopener noreferrer">
             <div className="cursor-pointer flex flex-col px-5 items-center h-[300px] w-[300px] md:w-[390px] md:h-[350px] rounded-[50px] min-w-[80vw] md:min-w-[unset]"
               style={{ backgroundImage: "linear-gradient(300deg, #181820, #2A2C2E)" }}>
@@ -429,17 +411,17 @@ export default function Home() {
         <AnimatedFadeIn className="w-full flex mt-10 items-center justify-center">
 
           <div className="w-full md:w-1/2 text-center">
-            <div className="text-[20px] md:text-4xl font-bold text-toolsText">My Tools of Expertise</div>
-            <div className="text-[10px] md:text-sm px-10 md:px-40 mt-5 text-toolsText">With a proven track record in delivering custom automation tools & integrations, We can confidently say that your business process automation is in capable hands</div>
+            <div className="text-[20px] md:text-[44px] font-bold text-toolsText">My Tools of Expertise</div>
+            <div className="text-[10px] md:text-xl md:leading-tight px-10 md:px-20 mt-5 text-toolsText">With a proven track record in delivering custom automation tools & integrations, We can confidently say that your business process automation is in capable hands</div>
           </div>
 
         </AnimatedFadeIn>
 
-        <div className="mx-5 md:mx-40 my-5 md:my-20 flex flex-wrap items-center justify-center">
+        <div className="mx-5 md:mx-40 my-5 md:my-14 flex flex-wrap items-center justify-center">
           {
             buttonText.map((text, index) => (
               <a href="http://www.example.com" target="_blank" rel="noopener noreferrer">
-                <button key={index} className="bg-buttongrp-gradient m-1 md:m-2 text-[10px] md:text-sm text-black font-bold py-1.5 md:py-2 px-3 md:px-4 rounded-md">
+                <button key={index} className="bg-buttongrp-gradient m-1 md:m-2 text-[10px] md:text-xl text-black font-bold py-1.5 md:py-2 px-3 md:px-4 rounded-md">
                   {text}
                 </button>
               </a>
@@ -450,33 +432,34 @@ export default function Home() {
         <div id='about-us'></div>
 
         <AnimatedFadeInLeftToRight className="">
-          <div className="w-full flex flex-col md:flex-row mt-10 items-center justify-center px-8 md:px-40 ">
+          <div className="w-full flex flex-col md:flex-row mt-10 md:my-24 items-center justify-center px-8 md:px-40 ">
             {/* Web */}
             <div className="hidden md:block">
-              <Image src={zoom} alt="zoom" width={650} height={538} />
+              <Image src={zoom} alt="zoom" className='w-[72rem]' />
             </div>
             {/* Mobile */}
             <div className="block md:hidden  w-full">
               <Image src={zoom} alt="zoom" className='w-full h-[220px] object-contain' />
             </div>
-            <div className="px-0 md:px-20 md:ml-10 md:items-start mt-10 md:mt-0">
+            <div className="px-0 md:px-10 md:ml-10 md:items-start mt-10 md:mt-0">
 
-              <div className="text-1xl md:text-3xl text-center md:text-start font-bold text-toolsText">Let's automate a future where every minute counts, and every action drives growth.</div>
+              <div className="text-1xl md:text-[42px] md:leading-tight text-center md:text-start font-bold text-toolsText">Let's automate a future where every minute counts, and every action drives growth.</div>
 
               <div className="mt-6 md:mt-10 flex items-center  justify-center md:justify-start">
-                <Image src={zoomtext} alt="zoom" width={60} height={60} />
-                <div className="text-toolsText flex ml-2 text-[12px] md:text-base">
+                <Image className='md:block hidden' src={zoomtext} alt="zoom" width={80} height={80} />
+                <Image className='md:hiddne block' src={zoomtext} alt="zoom" width={60} height={60} />
+                <div className="text-toolsText flex ml-2 text-[12px] md:text-[24px] md:text-base">
                   <div className="font-bold ml-1">$25</div>
-                  <div className="ml-1">per</div>
-                  <div className="font-bold ml-1">30 min</div>
-                  <div className="ml-1">Zoom meeting</div>
+                  <div className="ml-1 text-gray-300">per</div>
+                  <div className="font-bold ml-1 ">30 min</div>
+                  <div className="ml-1 text-gray-300">Zoom meeting</div>
 
 
                 </div>
               </div>
 
               <div className="mt-10 flex items-center justify-center md:justify-start">
-                <button className="bg-button-gradient hover:bg-purple-700 text-white md:w-1/3 w-full py-4 md:py-3 px-6 rounded-full">
+                <button className="bg-button-gradient hover:bg-purple-700 text-white md:w-56 w-full py-4 md:py-3 px-6 rounded-full">
                   Book a consultation
                 </button>
               </div>
@@ -504,7 +487,7 @@ export default function Home() {
         </div>
 
 
-        <div className="w-full flex flex-col mt-10  justify-center">
+        <div className="w-full flex flex-col mt-10  justify-center overflow-hidden">
 
           <AnimatedFadeIn className="">
 
@@ -512,7 +495,7 @@ export default function Home() {
 
           </AnimatedFadeIn>
 
-          <div className="mt-5 md:px-20 py-5 border-t border-b border-customGray flex snap-center w-full">
+          <div className="mt-5 md:px-20 py-5 border-t border-b border-customGray flex snap-center w-full overflow-hidden">
 
             <CertificateSlider />
 
@@ -528,7 +511,7 @@ export default function Home() {
         <AnimatedFadeIn className="">
           <div className="flex items-center justify-center mt-16">
             <div className="text-center">
-              <h1 className="md:text-4xl text-xl font-bold text-toolsText">Testimonials</h1>
+              <h1 className="md:text-[44px] text-xl font-bold text-toolsText">Testimonials</h1>
             </div>
           </div>
 
@@ -536,7 +519,7 @@ export default function Home() {
 
 
 
-        <div className="flex flex-row md:justify-stretch md:mx-20 px-5 gap-2 md:gap-12 md:pt-20 py-5 overflow-x-scroll md:w-[unset] pb-20" style={{ scrollbarWidth: 'none' }}>
+        <div className="flex flex-row md:justify-stretch md:mx-20 px-5 gap-2 md:gap-12 md:pt-16 py-5 overflow-x-scroll md:w-[unset] pb-20" style={{ scrollbarWidth: 'none' }}>
 
           <a className="cursor-pointer flex flex-col flex-1 p-8 md:w-[350px] w-[400px]  rounded-[40px] bg-testimoCard min-w-[80vw] md:min-w-[unset]" href="http://www.example.com" target="_blank" rel="noopener noreferrer">
             {/* <div className="cursor-pointer flex flex-col flex-1 p-8 md:w-[350px] w-[400px]  rounded-[40px] bg-testimoCard min-w-[80vw] md:min-w-[unset]"> */}
