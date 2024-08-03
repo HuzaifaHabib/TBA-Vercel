@@ -557,7 +557,7 @@ const itemVariants2 = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 
-export const StaggeredFadeIn = ({ children, className }: any) => {
+const StaggeredFadeIn = ({ children, className }: any) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
 

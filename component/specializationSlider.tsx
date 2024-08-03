@@ -1,11 +1,14 @@
 import Slider from 'react-slick';
 
-import { StaggeredFadeIn } from "@/app/page";
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Image from "next/image";
 import card1 from './../public/card_1.png';
 import card2 from './../public/card_2.png';
 import card3 from './../public/card_3.png';
 import { useMediaQuery } from 'react-responsive';
+import { useEffect } from 'react';
+import React from 'react';
 
 
 
@@ -105,3 +108,108 @@ export const SpecializationSlider = () => {
         // </div>
     )
 }
+
+
+const fadeInVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } }
+};
+
+const AnimatedFadeIn = ({ children, className }: any) => {
+    const controls = useAnimation();
+    const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
+
+    useEffect(() => {
+        if (inView) {
+            controls.start('visible');
+        } else {
+            controls.start('hidden');
+        }
+    }, [controls, inView]);
+
+    return (
+        <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInVariants}
+            className={className}
+        >
+            {children}
+        </motion.div>
+    );
+};
+
+const fadeInLeftToRightVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1 } }
+};
+
+const AnimatedFadeInLeftToRight = ({ children, className }: any) => {
+    const controls = useAnimation();
+    const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
+
+    useEffect(() => {
+        if (inView) {
+            controls.start('visible');
+        } else {
+            controls.start('hidden');
+        }
+    }, [controls, inView]);
+
+    return (
+        <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInLeftToRightVariants}
+            className={className}
+        >
+            {children}
+        </motion.div>
+    );
+};
+
+
+const containerVariants2 = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.3
+        }
+    }
+};
+
+const itemVariants2 = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
+
+const StaggeredFadeIn = ({ children, className }: any) => {
+    const controls = useAnimation();
+    const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
+
+    useEffect(() => {
+        if (inView) {
+            controls.start('visible');
+        } else {
+            controls.start('hidden');
+        }
+    }, [controls, inView]);
+
+    return (
+        <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={containerVariants2}
+            className={className}
+        >
+            {React.Children.map(children, (child, index) => (
+                <motion.div key={index} variants={itemVariants2}>
+                    {child}
+                </motion.div>
+            ))}
+        </motion.div>
+    );
+};
