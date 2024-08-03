@@ -20,14 +20,14 @@ function PorfilioSlider() {
         slidesToScroll: 1,
         speed: 1000,
         autoplaySpeed: 5000,
-        arrows: false,
+        arrows: true,
         dots: false,
         autoplay: true,
         // nextArrow: <NextArrow />,
         // prevArrow: <PrevArrow />
     };
     return (
-        <div className='md:w-1/2 w-full'>
+        <div className='md:w-1/2 w-[85vw]'>
             <div className="slider-container">
                 <Slider {...settings}>
                     <div>
